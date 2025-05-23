@@ -40,10 +40,10 @@ function App() {
       addGuessedLetter(key)
     }
 
-    document.addEventListener("keypress", handler)
+    document.addEventListener("keydown", handler)
 
     return () => {
-      document.removeEventListener("keypress", handler)
+      document.removeEventListener("keydown", handler)
     }
   }, [guessedLetters])
 
@@ -57,10 +57,10 @@ function App() {
       setWordToGuess(getWord())
     }
 
-    document.addEventListener("keypress", handler)
+    document.addEventListener("keydown", handler)
 
     return () => {
-      document.removeEventListener("keypress", handler)
+      document.removeEventListener("keydown", handler)
     }
   }, [])
 
@@ -78,7 +78,7 @@ function App() {
       <div style={{ fontSize: "2rem", textAlign: "center" }}>
         {isWinner && "Winner! - Refresh to try again"}
         {isLoser && "Nice Try - Refresh to try again"}
-        </div>
+      </div>
       <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
       <HangmanWord 
         reveal={isLoser}
@@ -87,7 +87,7 @@ function App() {
       />
       <div style={{ alignSelf: "stretch" }}>
         <Keyboard  
-        disabled={isWinner || isLoser}
+          disabled={isWinner || isLoser}
           activeLetters={guessedLetters.filter(letter =>
             wordToGuess.includes(letter)
           )}

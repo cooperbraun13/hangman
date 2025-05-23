@@ -59,7 +59,7 @@ export function Keyboard({
             className={`${styles.btn} ${isActive ? styles.active : ""} ${
               isInactive ? styles.inactive : ""
             }`} 
-            disabled={isActive || isInactive || disabled}
+            disabled={isInactive || isActive || disabled}
             key={key}
           >
             {key}
