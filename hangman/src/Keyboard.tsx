@@ -34,13 +34,13 @@ export function Keyboard() {
     <div 
       style={{ 
         display: "grid", 
-        gridTemplateColumns: "repeat (auto-fit, minmax(75px, 1fr))", 
+        gridTemplateColumns: "repeat(auto-fit, minmax(75px, 1fr))", 
         gap: "0.5rem" 
       }}
     >
       {KEYS.map(key => {
         return (
-          <button className={styles.btn} key={key}>
+          <button className={`${styles.btn}`} key={key}>
             {key}
           </button>
         )
